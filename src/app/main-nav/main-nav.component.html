@@ -1,0 +1,72 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar class="sidenav-header">
+      <mat-icon class="avatar" aria-label="icon">person</mat-icon>
+        <p class="title">
+          Rodrigo
+        </p> 
+    </mat-toolbar>
+    <mat-divider></mat-divider>
+    <mat-nav-list>
+      <a mat-list-item href="#" class="nav-link" routerLink="/search">
+        <mat-icon class="" aria-label="icon">search</mat-icon>
+        <p class="text">
+          Comprar
+        </p>
+      </a>
+      <a mat-list-item href="#" class="nav-link" routerLink="/new">
+        <mat-icon class="m-right-1" aria-label="icon">store</mat-icon>
+        <p class="text">
+          Agregar Negocio
+        </p>
+      </a>
+      <a mat-list-item href="#" class="nav-link" routerLink="/purchases">
+        <mat-icon class="m-right-1" aria-label="icon">local_grocery_store</mat-icon>
+        <p class="text">
+          Consultas y Compras
+        </p>
+      </a>
+      <a mat-list-item href="#" class="nav-link" routerLink="/notifications">
+        <mat-icon class="m-right-1" aria-label="icon"> notifications </mat-icon>
+        <p class="text">
+          Alertas
+        </p>
+      </a>
+      <a mat-list-item href="#" class="nav-link" routerLink="/profile">
+        <mat-icon class="m-right-1" aria-label="icon">person</mat-icon>
+        <p class="text">
+          Mi Perfil
+        </p>
+      </a>
+      <a mat-list-item href="#" class="nav-link" routerLink="/help">
+        <mat-icon class="m-right-1" aria-label="icon">help</mat-icon>
+        <p class="text">
+          Ayuda
+        </p>
+      </a>
+      <a mat-list-item href="#" class="nav-link" routerLink="/">
+        <mat-icon class="m-right-1" aria-label="icon">power_settings_new</mat-icon>
+        <p class="text">
+          Cerrar Sesión
+        </p>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar class="navbar">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span> Busqueda </span>
+    </mat-toolbar>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

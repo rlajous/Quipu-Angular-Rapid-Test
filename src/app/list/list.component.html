@@ -1,0 +1,64 @@
+<div class="search-container">
+  <form novalidate action="" class="search">
+    <button class="search-icon">
+      <mat-icon aria-label="icon">search</mat-icon>
+    </button>
+    <input type="text" class="search-input" placeholder="Buscar">
+  </form>
+  <button class="filter">
+    <p class="text">
+      Filtros
+    </p>
+    <mat-icon class="filter-icon" aria-label="icon">tune</mat-icon>
+  </button>
+</div>
+
+<mat-tab-group mat-stretch-tabs class="mat-elevation-z4 sarasa">
+  <mat-tab label="Negocios">
+
+    <div class="header">
+      <p class='title'>{{ brews ? brews.length : 0 }} Publicaciones</p>
+    </div>
+    
+    <ul class="products" *ngIf="brews">
+      <li class="product" *ngFor="let brew of brews">
+        <img class='logo' src='../../assets/SD-default-image.png'/>
+        <div class="info">
+            <p class="name">{{ brew.name }}</p>
+            <div class="rating">
+                <p class="number">{{ brew.id % 5 }}</p>
+                <span *ngFor="let a of arrayOne(brew.id % 5)" class="glyphicon glyphicon-star star"></span>
+            </div>
+            <p class="price">$ {{ brew.id }}</p>
+        </div>
+      </li>
+    </ul>
+  </mat-tab>
+  <mat-tab label="Publicaciones">
+
+
+
+    <div class="header">
+      <p class='title'>{{ brews ? brews.length : 0 }} Publicaciones</p>
+    </div>
+    
+    <ul class="products" *ngIf="brews">
+      <li class="product" *ngFor="let brew of brews">
+        <img class='logo' src='../../assets/SD-default-image.png'/>
+        <div class="info">
+            <p class="name">{{ brew.name }}</p>
+            <div class="rating">
+                <p class="number">{{ brew.id % 5 }}</p>
+                <span *ngFor="let a of arrayOne(brew.id % 5)" class="glyphicon glyphicon-star star"></span>
+            </div>
+            <p class="price">$ {{ brew.id }}</p>
+        </div>
+      </li>
+    </ul>    
+  </mat-tab>
+</mat-tab-group>
+
+<div class="search">
+
+</div>
+
